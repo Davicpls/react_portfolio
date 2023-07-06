@@ -4,17 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import crycat3 from '../../Images/crycat3.jpeg'
+import crycat3 from '../Images/crycat3.jpeg'
 export default function CardAbout() {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={crycat3}
-          alt="cccaaattt"
-        />
+    <Card sx={{ maxWidth: '38vh' }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Cat
@@ -24,11 +17,7 @@ export default function CardAbout() {
             species, ranging across all continents except Antarctica
           </Typography>
         </CardContent>
-      </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
       </CardActions>
     </Card>
   );

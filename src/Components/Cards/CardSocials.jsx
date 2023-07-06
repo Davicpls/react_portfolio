@@ -3,33 +3,46 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
-import crycat from '../../Images/crycat.jpeg'
+import { Button, CardActionArea, CardActions, List, ListItem, ListItemButton, ListItemIcon, ListItemText  } from '@mui/material';
+import crycat from '../Images/crycat.jpeg'
+
 
 export default function CardSocials() {
+
+  const linkedinRedirect = () => {
+    window.location.href = 'https://www.linkedin.com/in/davicpls/'
+  }
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image={crycat}
-          alt="cat cat"
-        />
+    <Card sx={{ maxWidth: '38vh' }}>
+
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Cat
+          <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">
+            My Socials
           </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Cats are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+          <Typography fontFamily={'Montserrat'} variant="body2" color="text.secondary">
+          <List>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+
+              </ListItemIcon>
+              <ListItemText primary="Inbox" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+ 
+              </ListItemIcon>
+              <ListItemText primary="Drafts" />
+            </ListItemButton>
+          </ListItem>
+        </List>
           </Typography>
         </CardContent>
-      </CardActionArea>
+
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
       </CardActions>
     </Card>
   );

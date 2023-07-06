@@ -12,7 +12,7 @@ import { useState } from 'react'
 
 
 
-function TabPanel(props) {
+function TabPanelPt(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -32,7 +32,7 @@ function TabPanel(props) {
   );
 }
 
-TabPanel.propTypes = {
+TabPanelPt.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
@@ -45,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-export default function TabsPanel() {
+export default function TabsPanelPt() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
 
@@ -60,7 +60,7 @@ export default function TabsPanel() {
 
   return (
 
-    <Box >
+    <Box>
     
         <Tabs
           value={value}
@@ -69,28 +69,27 @@ export default function TabsPanel() {
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
-          sx={{fontFamily:'Montserrat'}}
         >
           <Tab sx={{width:'400px'}} label="Socials" {...a11yProps(0)} />
           <Tab sx={{width:'400px'}} label="Skills" {...a11yProps(1)} />
           <Tab sx={{width:'400px'}} label="About" {...a11yProps(2)} />
         </Tabs>
         
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanelPt value={value} index={0} dir={theme.direction}>
         <Box display={'flex'} justifyContent={'start'}>
         <CardSocials>
 
         </CardSocials>
         </Box> 
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        </TabPanelPt>
+        <TabPanelPt value={value} index={1} dir={theme.direction}>
         <Box display={'flex'} justifyContent={'center'}>
         <CardSkills>
 
         </CardSkills>
         </Box> 
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
+        </TabPanelPt>
+        <TabPanelPt value={value} index={2} dir={theme.direction}>
 
         <Box display={'flex'} justifyContent={'end'}>
       
@@ -98,7 +97,7 @@ export default function TabsPanel() {
         </CardAbout>
         </Box>
  
-        </TabPanel>
+        </TabPanelPt>
  
     </Box>
     
