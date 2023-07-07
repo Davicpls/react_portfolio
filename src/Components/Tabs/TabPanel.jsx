@@ -4,8 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import CardSocials from '../Cards/CardSocials';
 import CardAbout from '../Cards/CardAbout';
 import CardSkills from '../Cards/CardSkills';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
+import { Tabs, Tab } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useState } from 'react'
@@ -49,31 +48,30 @@ export default function TabsPanel() {
   const theme = useTheme();
   const [value, setValue] = useState(0);
 
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
-
+  
 
 
 
   return (
 
-    <Box >
+    <Box sx={{width:'100vh'}}>
     
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
+          TabIndicatorProps={{ style: { backgroundColor: "#93032E" } }}
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
           sx={{fontFamily:'Montserrat'}}
         >
-          <Tab sx={{width:'400px'}} label="Socials" {...a11yProps(0)} />
-          <Tab sx={{width:'400px'}} label="Skills" {...a11yProps(1)} />
-          <Tab sx={{width:'400px'}} label="About" {...a11yProps(2)} />
+          <Tab sx={{width:'33vh'}} label="Socials" {...a11yProps(0)} />
+          <Tab sx={{width:'33vh'}} label="Skills" {...a11yProps(1)} />
+          <Tab sx={{width:'33vh'}} label="About" {...a11yProps(2)} />
         </Tabs>
         
         <TabPanel value={value} index={0} dir={theme.direction}>
