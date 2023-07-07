@@ -5,9 +5,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import crycat3 from '../Images/crycat3.jpeg'
+
 export default function CardAbout() {
   return (
-    <Card sx={{ maxWidth: '38vh' }}>
+    <Card sx={{ width: '28vh' }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Cat
