@@ -1,26 +1,9 @@
-.App {
-  text-align: center;
-  height: 100vh;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.Body {
   background: #2D4C6D;
-  min-height: 100vh;
-  display: flex;
+  height: 100%;
   flex-direction: column;
-  align-items: center;
-  justify-content: start;
   font-size: calc(10px + 2vmin);
  
 }
@@ -29,17 +12,18 @@
   color: white;
   background: #051E34 ;
   min-height: 8vh;
+  max-height: 9vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 9%;
   align-items: center;
+  display: flex;
+  font-size: calc(10px + 2vmin);
   font-weight: bolder;
   font-family:'Montserrat', sans-serif;
   gap: 5vh;
 }
 
 .flagImgs {
-  border-radius: 10%;
-
+  border-radius: 100%;
 
 }

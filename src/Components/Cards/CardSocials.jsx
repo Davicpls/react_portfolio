@@ -56,7 +56,7 @@ export default function CardSocials() {
 
 
   return (
-    <Card sx={{ width: '28vh' }}>
+    <Card sx={{ width: '31%' }}>
 
         <CardContent>
           <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">

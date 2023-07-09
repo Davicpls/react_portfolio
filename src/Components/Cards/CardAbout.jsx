@@ -8,7 +8,7 @@ import crycat3 from '../Images/crycat3.jpeg'
 
 export default function CardAbout() {
   return (
-    <Card sx={{ width: '28vh' }}>
+    <Card sx={{ width: '31%' }}>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             Cat
