@@ -60,7 +60,7 @@ export default function TabsPanelPt() {
 
   return (
 
-    <Box>
+    <Box sx={{width:'70%'}}>
     
         <Tabs
           value={value}
@@ -70,9 +70,9 @@ export default function TabsPanelPt() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab sx={{width:'400px'}} label="Socials" {...a11yProps(0)} />
-          <Tab sx={{width:'400px'}} label="Skills" {...a11yProps(1)} />
-          <Tab sx={{width:'400px'}} label="About" {...a11yProps(2)} />
+          <Tab sx={{width:'31%'}} label="Socials" {...a11yProps(0)} />
+          <Tab sx={{width:'31%'}} label="Skills" {...a11yProps(1)} />
+          <Tab sx={{width:'31%'}} label="About" {...a11yProps(2)} />
         </Tabs>
         
         <TabPanelPt value={value} index={0} dir={theme.direction}>

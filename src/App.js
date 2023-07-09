@@ -24,32 +24,27 @@ const handleChangeLanguage = (newValue) => {
 
 
   return (
-    <div className='App-header'>
+    <Box sx={{width:'1920px'}}>
       <div className='NavBar'>
-        <Box sx={{width:'60%'}} display={'flex'} justifyContent={'end'} alignItems={'center'}>
+        <Box sx={{width:'39%'}} display={'flex'} justifyContent={'end'}  alignItems={'center'}>
           Portfolio
         </Box>
         
-          <Box sx={{width:'50%', fontSize:'18px'}} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+          <Box sx={{width:'30%', fontSize:'18px'}} justifyContent={'end'} display={'flex'} alignItems={'center'}>
           
           {changeLanguage === 'ptbr' ? <>Idioma:</> : <>Language:</>}
-            <Box  display={'flex'} alignItems={'center'}>
-            <Button onClick={() => handleChangeLanguage('ptbr')} sx={{padding:'1px'}} >
+            <Box sx={{paddingLeft:'1vh'}} display={'flex'} alignItems={'center'}>
+            <Button onClick={() => handleChangeLanguage('ptbr')} >
             <img width={'80%'} height={'25px'} src={bandeirabr} alt="br_flag" className='flagImgs'></img>
             </Button>
-            <Button onClick={() => handleChangeLanguage('en')} sx={{padding:'1px'}}>
+            <Button onClick={() => handleChangeLanguage('en')}>
             <img width={'80%'} height={'25px'} src={bandeirauk} alt="uk_flag" className='flagImgs'></img>
             </Button>
             </Box>
           </Box>
-      </div>
-
-      <Box width={'100%'}><Divider 
-      sx={{color:'white'}}>
-      </Divider>
-
-      </Box>
-        <Box>
+          </div>
+      <div className='Middle'>
+        <Box sx={{width:'100%'}} display={'flex'} justifyContent={'center'}>
         {changeLanguage === 'ptbr' ?
         <TabsPanelPt>
         </TabsPanelPt>
@@ -57,8 +52,9 @@ const handleChangeLanguage = (newValue) => {
           <TabsPanel>
           </TabsPanel>
           }
-        </Box>
-    </div>
+        </Box> 
+        </div>
+    </Box>
   );
 }
 
