@@ -43,7 +43,7 @@ export default function CardSocials() {
       
       Toast.fire({
         icon: 'success',
-        title: 'Link copiado!'
+        title: 'Email copiado!'
       });
     } catch (err) {
       Toast.fire({

@@ -9,9 +9,9 @@
 
 .NavBar {
   color: white;
-  background: #051E34 ;
-  min-height: 8vh;
-  max-height: 8vh;
+  background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
+  min-height: 6vh;
+  max-height: 6vh;
   width: 100%;
   display: flex;
   justify-content: center;

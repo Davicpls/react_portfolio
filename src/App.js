@@ -1,46 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import { Box, Button } from "@mui/material/";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import CircleIcon from '@mui/icons-material/Circle';
+import { Box, Button, List, ListItem, ListItemText, IconButton, Paper } from "@mui/material/";
 import TabsPanel from "./Components/Tabs/TabPanel";
 import TabsPanelPt from "./Components/Tabs/TabPanelPt";
 import { useState } from "react";
 import bandeirabr from "./Components/Images/bandeirabr.jpeg";
 import bandeirauk from "./Components/Images/bandeirauk.jpg";
 import octokit from "./Hooks/useOctokit";
-import { parseISO } from "date-fns";
+import { parseISO, format } from "date-fns";
 
 function App() {
-  async function getUserData() {
-    const response = await octokit.request(
-      "GET /repos/Davicpls/react_portfolio/commits"
-    );
-    let multiDateTime = []
-      response.data.map(e => {
-      multiDateTime.push(e["commit"]["author"]["date"])
-      return multiDateTime
-    })
-    multiDateTime.forEach((date, index, array) => {
-        array[index] = parseISO(date)
-    })
 
-    return multiDateTime;
-  }
+  const [gitBox, setGitBox] = useState(null)
 
+    useEffect(()=> {
+      async function getUserData(){
+        const response = await octokit.request("GET /repos/Davicpls/react_portfolio/commits");
+        setGitBox(response)
+        return response
 
-  getUserData()
-    .then((res) => {
-      console.log(res)
-    })
+    }
+    getUserData()
+  }, [])
 
-    .catch((err) => {
-      console.log(err);
-    });
 
   const [changeLanguage, setChangeLanguage] = useState("ptbr");
+
   const handleChangeLanguage = (newValue) => {
     setChangeLanguage(newValue);
   };
 
+  if (!gitBox){
+    return <div>Loading...</div>
+  }
+  const data = gitBox['data'].map((rows) => {
+    return rows['commit']['author']['date']
+  })
   return (
     <Box sx={{ width: "1920px" }}>
       <div className="NavBar">
@@ -65,7 +62,7 @@ function App() {
             display={"flex"}
             alignItems={"center"}
           >
-            <Button onClick={() => handleChangeLanguage("ptbr")}>
+            <IconButton onClick={() => handleChangeLanguage("ptbr")}>
               <img
                 width={"80%"}
                 height={"25px"}
@@ -73,8 +70,8 @@ function App() {
                 alt="br_flag"
                 className="flagImgs"
               ></img>
-            </Button>
-            <Button onClick={() => handleChangeLanguage("en")}>
+            </IconButton>
+            <IconButton onClick={() => handleChangeLanguage("en")}>
               <img
                 width={"80%"}
                 height={"25px"}
@@ -82,7 +79,7 @@ function App() {
                 alt="uk_flag"
                 className="flagImgs"
               ></img>
-            </Button>
+            </IconButton>
           </Box>
         </Box>
       </div>
@@ -93,6 +90,24 @@ function App() {
           ) : (
             <TabsPanel></TabsPanel>
           )}
+        </Box>
+        <Box sx={{ width: "100%", fontSize: '12px', marginLeft: '50px'}} display={"flex"} alignItems={'start'} justifyContent={"start"}>
+          <Paper elevation={24} sx={{padding: '8px', fontFamily: 'Montserrat'}}>Last 10 GitHub Commits
+        <List >
+      {data.slice(0, 10).map((date, index) => {
+        const parsedDate = parseISO(date);
+        const formattedDate = format(parsedDate, 'PPpp');
+
+        return (
+          <ListItem sx={{padding: '5px'}} key={index}>
+            <CircleIcon sx={{color: 'green', fontSize: '7px', marginRight: '10px'}}/>{formattedDate}
+          </ListItem>
+        );
+      })}
+      
+    </List>
+    <GitHubIcon/>
+    </Paper>
         </Box>
       </div>
     </Box>

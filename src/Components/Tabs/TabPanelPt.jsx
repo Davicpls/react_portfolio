@@ -56,8 +56,6 @@ export default function TabsPanelPt() {
 
 
 
-
-
   return (
 
     <Box sx={{width:'70%'}}>
