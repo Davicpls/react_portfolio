@@ -1,9 +1,9 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
-import CardSocials from '../Cards/CardSocials';
-import CardAbout from '../Cards/CardAbout';
-import CardSkills from '../Cards/CardSkills';
+import CardSocialsPt from '../Cards/CardSocialsPt';
+import CardAboutPt from '../Cards/CardAboutPt';
+import CardSkillsPtFix from '../Cards/CardSkillsPtFix'
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
@@ -58,12 +58,12 @@ export default function TabsPanelPt() {
 
   return (
 
-    <Box sx={{width:'70%'}}>
+    <Box sx={{width:'70%',  marginRight: '300px'}}>
     
         <Tabs
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
+          TabIndicatorProps={{ style: { backgroundColor: "#1A4055" } }}
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
@@ -72,27 +72,25 @@ export default function TabsPanelPt() {
           <Tab sx={{width:'31%'}} label="Skills" {...a11yProps(1)} />
           <Tab sx={{width:'31%'}} label="About" {...a11yProps(2)} />
         </Tabs>
-        
         <TabPanelPt value={value} index={0} dir={theme.direction}>
         <Box display={'flex'} justifyContent={'start'}>
-        <CardSocials>
+        <CardSocialsPt>
 
-        </CardSocials>
+        </CardSocialsPt>
         </Box> 
         </TabPanelPt>
         <TabPanelPt value={value} index={1} dir={theme.direction}>
         <Box display={'flex'} justifyContent={'center'}>
-        <CardSkills>
-
-        </CardSkills>
+          <CardSkillsPtFix>
+          </CardSkillsPtFix>
         </Box> 
         </TabPanelPt>
         <TabPanelPt value={value} index={2} dir={theme.direction}>
 
         <Box display={'flex'} justifyContent={'end'}>
       
-        <CardAbout>
-        </CardAbout>
+        <CardAboutPt>
+        </CardAboutPt>
         </Box>
  
         </TabPanelPt>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CircleIcon from '@mui/icons-material/Circle';
-import { Box, Button, List, ListItem, ListItemText, IconButton, Paper } from "@mui/material/";
+import { Box, Button, List, ListItem, ListItemText, IconButton, Paper, Divider } from "@mui/material/";
 import TabsPanel from "./Components/Tabs/TabPanel";
 import TabsPanelPt from "./Components/Tabs/TabPanelPt";
 import { useState } from "react";
@@ -13,13 +13,29 @@ import { parseISO, format } from "date-fns";
 
 function App() {
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [gitBox, setGitBox] = useState(null)
 
     useEffect(()=> {
       async function getUserData(){
+        setIsLoading(true)
+        try {
         const response = await octokit.request("GET /repos/Davicpls/react_portfolio/commits");
         setGitBox(response)
         return response
+        }
+        catch (error) {
+          if (error.status === 401) {
+            setError('Bad credentials');
+          }
+          else {
+            setError(error.message);
+          }
+        }
+        finally {
+          setIsLoading(false)
+        }
 
     }
     getUserData()
@@ -31,7 +47,13 @@ function App() {
   const handleChangeLanguage = (newValue) => {
     setChangeLanguage(newValue);
   };
-
+  
+  if (isLoading) {
+    return <div className="initialLoad">Loading...</div> 
+  }
+  if (error) {
+    return <div className="errorAtLoad">{error}</div>
+  }
   if (!gitBox){
     return <div>Loading...</div>
   }
@@ -42,7 +64,7 @@ function App() {
     <Box sx={{ width: "1920px" }}>
       <div className="NavBar">
         <Box
-          sx={{ width: "39%" }}
+          sx={{ width: "39%", marginRight: '30px' }}
           display={"flex"}
           justifyContent={"end"}
           alignItems={"center"}
@@ -84,15 +106,10 @@ function App() {
         </Box>
       </div>
       <div className="Middle">
-        <Box sx={{ width: "100%" }} display={"flex"} justifyContent={"center"}>
-          {changeLanguage === "ptbr" ? (
-            <TabsPanelPt></TabsPanelPt>
-          ) : (
-            <TabsPanel></TabsPanel>
-          )}
-        </Box>
-        <Box sx={{ width: "100%", fontSize: '12px', marginLeft: '50px'}} display={"flex"} alignItems={'start'} justifyContent={"start"}>
-          <Paper elevation={24} sx={{padding: '8px', fontFamily: 'Montserrat'}}>Last 10 GitHub Commits
+        
+        <Box sx={{ width: "100%" }} display={"flex"} justifyContent={"center"} gap={'50px'}>
+        <Box sx={{fontSize: '12px', marginLeft: '50px', marginTop: '50px'}} display={"flex"} alignItems={'start'} justifyContent={"start"}>
+        <Paper elevation={24} sx={{padding: '8px', fontFamily: 'Montserrat'}}> {changeLanguage === 'ptbr' ? <>Últimos 10 commits</> : <>10 Last GitHub Commits</>}
         <List >
       {data.slice(0, 10).map((date, index) => {
         const parsedDate = parseISO(date);
@@ -108,6 +125,13 @@ function App() {
     </List>
     <GitHubIcon/>
     </Paper>
+        </Box>
+        <Box sx={{maxHeight: '300px', width: '2px', backgroundColor: '#1A4055', margin: '82px 15px' }}></Box>
+          {changeLanguage === "ptbr" ? (
+            <TabsPanelPt></TabsPanelPt>
+          ) : (
+            <TabsPanel></TabsPanel>
+          )}
         </Box>
       </div>
     </Box>
