@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
+import logo from './logo.svg'
+import mui from '../src/Components/Icons/mui.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Box, Button, List, ListItem, ListItemText, IconButton, Paper, Divider } from "@mui/material/";
@@ -12,6 +14,17 @@ import octokit from "./Hooks/useOctokit";
 import { parseISO, format } from "date-fns";
 
 function App() {
+
+  const reactDocs = () => {
+    window.open('https://react.dev/learn', '_blank')
+  }
+
+  const muiDocs = () => {
+    window.open('https://mui.com/material-ui/getting-started/', '_blank')
+  }
+
+  const yearData = new Date();
+  const actualYear = yearData.getFullYear();
 
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -62,7 +75,8 @@ function App() {
   })
   return (
     <Box sx={{ width: "1920px" }}>
-      <div className="NavBar">
+      <Paper sx={{mb: '10px'}} elevation={5}>
+      <Box className="NavBar">
         <Box
           sx={{ width: "39%", marginRight: '30px' }}
           display={"flex"}
@@ -78,7 +92,7 @@ function App() {
           display={"flex"}
           alignItems={"center"}
         >
-          {changeLanguage === "ptbr" ? <>Idioma:</> : <>Language:</>}
+          {changeLanguage === "ptbr" ? <>Language:</> : <>Idioma:</>}
           <Box
             sx={{ paddingLeft: "1vh" }}
             display={"flex"}
@@ -104,7 +118,8 @@ function App() {
             </IconButton>
           </Box>
         </Box>
-      </div>
+      </Box>
+      </Paper>
       <div className="Middle">
         
         <Box sx={{ width: "100%" }} display={"flex"} justifyContent={"center"} gap={'50px'}>
@@ -134,6 +149,74 @@ function App() {
           )}
         </Box>
       </div>
+      <Box sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        maxHeight: '6vh',
+        minHeight: '6vh',
+        background: '#050C1B linear-gradient(270deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%)',
+        fontSize: '12px',
+        fontFamily: 'Montserrat',
+        color: 'white',
+        gap: '30px',
+        overflow: 'hidden'
+                }}>
+      {changeLanguage === "ptbr" ?           
+      <Box display={'flex'} gap={'8px'} alignItems={'center'}>
+        <Box>
+        © 
+        </Box>
+        <Box>
+        {actualYear} 
+        </Box>
+        <Box>
+        Davi Coelho — Todos os direitos reservados. 
+        </Box>
+        <Box>
+        |
+        </Box>
+        <Box>
+        Feito com React
+        </Box> 
+        <IconButton sx={{padding: 0}} onClick={reactDocs}>
+        <img src={logo} className="App-logo" alt="logo" />
+        </IconButton> 
+        <Box>
+        & MUI libs
+      </Box>
+      </Box>
+      : 
+      <Box display={'flex'} gap={'8px'} alignItems={'center'}>
+        <Box>
+        © 
+        </Box>
+        <Box>
+        {actualYear} 
+        </Box>
+        <Box>
+        Davi Coelho — All rights reserved. 
+        </Box>
+        <Box>
+        |
+        </Box>
+        <Box>
+        Made with React
+        </Box> 
+        <IconButton sx={{padding: 0}} onClick={reactDocs}>
+        <img src={logo} className="App-logo" alt="logo-react" />
+        </IconButton> 
+        <Box>
+        & MUI
+      </Box>
+      <IconButton sx={{padding: 0}} onClick={muiDocs}>
+        <img src={mui} alt="mui" />
+        </IconButton>
+      <Box>
+        libs
+      </Box>
+      </Box>}
+      </Box>
     </Box>
   );
 }
