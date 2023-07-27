@@ -3,6 +3,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {
   Button,
   CardActionArea,
@@ -10,10 +12,19 @@ import {
   List,
   ListItem,
   Collapse,
-  ListItemIcon
+  ListItemIcon,
+  IconButton
 } from "@mui/material";
+import { useState } from 'react'
 
 export default function CardAbout() {
+
+  const [showMore, setShowMore] = useState(false)
+
+  const handleShowMore = () => {
+    setShowMore(!showMore)
+  }
+
   return (
     <Card elevation={24} sx={{ width: "28vh", marginRight: "60px" }}>
       <CardContent>
@@ -31,6 +42,7 @@ export default function CardAbout() {
             <ListItem sx={{ padding: "5px" }}>Pursuing Computer Science degree at PUC-MG University.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Knowledgeable in Javascript, HTML, and CSS and C#.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Interning at BTG Pactual, working with technologies such as</ListItem>
+            <Collapse in={showMore}>
             <Collapse in={true} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
             <ListItemIcon>
@@ -67,10 +79,14 @@ export default function CardAbout() {
         </List>
       </Collapse>
             <ListItem sx={{ padding: "5px" }}>Experience in developing, deploying, and managing complex systems and cloud infrastructure.</ListItem>
+            </Collapse>
+            <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
+            {!showMore ? <KeyboardArrowDownIcon color='primary'/>: <KeyboardArrowUpIcon/>}
+            {!showMore ? 'Show more' : 'Show less'}
+            </IconButton>
           </List>
         </Typography>
       </CardContent>
-      <CardActions></CardActions>
     </Card>
   );
 }

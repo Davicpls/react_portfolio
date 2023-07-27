@@ -2,6 +2,8 @@ import * as React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Typography from "@mui/material/Typography";
 import {
   Button,
@@ -10,10 +12,19 @@ import {
   List,
   ListItem,
   Collapse,
-  ListItemIcon
+  ListItemIcon,
+  IconButton
 } from "@mui/material";
+import { useState } from 'react';
 
 export default function CardAbout() {
+
+  const [showMore, setShowMore] = useState(false)
+
+  const handleShowMore = () => {
+      setShowMore(!showMore)
+  }
+
   return (
     <Card elevation={24} sx={{ width: "28vh", marginRight: "60px" }}>
       <CardContent>
@@ -31,6 +42,7 @@ export default function CardAbout() {
             <ListItem sx={{ padding: "5px" }}>Cursando a graduação de Sistemas de Informação na Universidade PUC-MG..</ListItem>
             <ListItem sx={{ padding: "5px" }}>Conhecimentos sólidos em Javascript, HTML e CSS e C#.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Estagiando no BTG Pactual, trabalhando com tecnologias como</ListItem>
+            <Collapse in={showMore}>
             <Collapse in={true} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
             <ListItemIcon>
@@ -67,10 +79,14 @@ export default function CardAbout() {
         </List>
       </Collapse>
             <ListItem sx={{ padding: "5px" }}>Experiência em desenvolvimento, implantação e gestão de sistemas complexos e infraestrutura na nuvem.</ListItem>
+            </Collapse>
+            <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
+          {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
+          {!showMore ? 'mostrar mais' : 'mostrar menos'}
+        </IconButton>
           </List>
         </Typography>
       </CardContent>
-      <CardActions></CardActions>
     </Card>
   );
 }
