@@ -9,7 +9,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
 import { Button, CardActionArea, CardActions, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
 import Swal from 'sweetalert2'
-import instagram from '../Icons/instagram.png'
 
 const Toast = Swal.mixin({
   toast: true,
@@ -24,7 +23,7 @@ const Toast = Swal.mixin({
 })
 
 
-export default function CardSocials() {
+export default function CardSocialsPt() {
 
   const linkedinRedirect = () => {
     window.open('https://www.linkedin.com/in/davicpls/', '_blank')
@@ -44,12 +43,12 @@ export default function CardSocials() {
       
       Toast.fire({
         icon: 'success',
-        title: 'Copied Email!'
+        title: 'Email copiado!'
       });
     } catch (err) {
       Toast.fire({
         icon: 'error',
-        title: 'Error at copying the Email.'
+        title: 'Falha ao copiar o link.'
       });
     }
   };
@@ -61,7 +60,7 @@ export default function CardSocials() {
 
         <CardContent>
           <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">
-            My Socials
+            Minhas redes
           </Typography>
           <Typography fontFamily={'Montserrat'} variant="body2" color="text.secondary">
           <List>

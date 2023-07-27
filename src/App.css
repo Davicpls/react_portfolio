@@ -1,45 +1,64 @@
-.App {
-  text-align: center;
-  height: 100vh;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.Middle {
+  height: 809px;
   background: #2D4C6D;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
+  background: white;
   font-size: calc(10px + 2vmin);
- 
+  
 }
 
 .NavBar {
   color: white;
-  background: #051E34 ;
-  min-height: 8vh;
+  background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
+  min-height: 6vh;
+  max-height: 6vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bolder;
   font-family:'Montserrat', sans-serif;
+  font-size: calc(6px + 2vmin);
   gap: 5vh;
+
 }
 
 .flagImgs {
-  border-radius: 10%;
-
-
+  border-radius: 100%;
 }
+
+.errorAtLoad {
+  background-color: aliceblue;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Montserrat';
+}
+
+.errorAtLoad {
+  background-color: aliceblue;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-family: 'Montserrat';
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 25px;
+  pointer-events: none;
+  padding: 0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
