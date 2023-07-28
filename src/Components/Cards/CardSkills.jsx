@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box, CardActions, List, ListItem, Collapse, ListItemIcon, IconButton } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import python_icon from '../Icons/python_icon.png';
 import javaScript from '../Icons/javaScript.png';
 import CSharp from '../Icons/CSharp.png';
@@ -183,7 +184,7 @@ export default function CardSkills() {
         </CardContent>
       <CardActions>
         <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
-          <KeyboardArrowDownIcon color='primary'/>
+        {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
           {!showMore ? 'show more' : 'show less'}
         </IconButton>
       </CardActions>

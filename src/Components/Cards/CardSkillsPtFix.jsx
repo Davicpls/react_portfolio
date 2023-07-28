@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { Box, CardActions, List, ListItem, Collapse, ListItemIcon, IconButton } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import python_icon from '../Icons/python_icon.png';
 import javaScript from '../Icons/javaScript.png';
 import CSharp from '../Icons/CSharp.png';
@@ -15,7 +16,7 @@ import AWS from '../Icons/AWS.png';
 import Azure from '../Icons/Azure.png';
 
 
-export default function CardSkills() {
+export default function CardSkillsPt() {
 
   const [showMore, setShowMore] = useState(false)
 
@@ -24,8 +25,8 @@ export default function CardSkills() {
   }
 
   return (
-    <Card elevation={24} sx={{ width: '28vh' }}>
-        <CardContent>
+    <Card elevation={24} sx={{ width: '28vh'}}>
+        <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">
             Habilidades
         </Typography>
@@ -181,12 +182,10 @@ export default function CardSkills() {
       </List>
       </Typography>
         </CardContent>
-      <CardActions>
         <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
-          <KeyboardArrowDownIcon color='primary'/>
+        {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
           {!showMore ? 'mostrar mais' : 'mostrar menos'}
         </IconButton>
-      </CardActions>
     </Card>
   );
 }
