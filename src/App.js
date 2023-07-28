@@ -183,7 +183,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         </IconButton> 
         <Box>
-        & MUI libs
+        & MUI
+      </Box>
+            <IconButton sx={{padding: 0}} onClick={muiDocs}>
+        <img src={mui} alt="mui" />
+        </IconButton>
+              <Box>
+        libs
       </Box>
       </Box>
       : 
