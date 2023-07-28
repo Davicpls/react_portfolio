@@ -1,13 +1,12 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import EmailIcon from '@mui/icons-material/Email';
-import { Button, CardActionArea, CardActions, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
+import { CardActions, List, ListItem, ListItemButton, ListItemIcon, ListItemText} from '@mui/material';
 import Swal from 'sweetalert2'
 
 const Toast = Swal.mixin({
