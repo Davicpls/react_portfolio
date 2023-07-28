@@ -58,20 +58,30 @@ export default function TabsPanel() {
 
   return (
 
+<<<<<<< HEAD
     <Box sx={{width:'70%'}} >
+=======
+    <Box sx={{width:'70%', marginRight: '300px'}}>
+>>>>>>> 91e0f3305f57980da9542aa69b78e03c58e898ba
     
         <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { backgroundColor: "#93032E" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#1A4055" } }}
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"
           sx={{fontFamily:'Montserrat'}}
         >
+<<<<<<< HEAD
           <Tab sx={{width:'33%'}} label="Socials" {...a11yProps(0)} />
           <Tab sx={{width:'33%'}} label="Skills" {...a11yProps(1)} />
           <Tab sx={{width:'33%'}} label="About" {...a11yProps(2)} />
+=======
+          <Tab sx={{width:'31%'}} label="Socials" {...a11yProps(0)} />
+          <Tab sx={{width:'31%'}} label="Skills" {...a11yProps(1)} />
+          <Tab sx={{width:'31%'}} label="About" {...a11yProps(2)} />
+>>>>>>> 91e0f3305f57980da9542aa69b78e03c58e898ba
         </Tabs>
         
         <TabPanel value={value} index={0} dir={theme.direction}>
