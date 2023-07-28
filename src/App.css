@@ -43,6 +43,7 @@
 
 .flagImgs {
   border-radius: 10%;
+}
 
 
 @keyframes App-logo-spin {
@@ -53,4 +54,3 @@
     transform: rotate(360deg);
   }
 }
-
