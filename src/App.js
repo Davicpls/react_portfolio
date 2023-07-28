@@ -4,7 +4,7 @@ import logo from './logo.svg'
 import mui from '../src/Components/Icons/mui.png'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import CircleIcon from '@mui/icons-material/Circle';
-import { Box, Button, List, ListItem, ListItemText, IconButton, Paper, Divider } from "@mui/material/";
+import { Box, List, ListItem, IconButton, Paper } from "@mui/material/";
 import TabsPanel from "./Components/Tabs/TabPanel";
 import TabsPanelPt from "./Components/Tabs/TabPanelPt";
 import { useState } from "react";
@@ -183,7 +183,13 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         </IconButton> 
         <Box>
-        & MUI libs
+        & MUI
+      </Box>
+            <IconButton sx={{padding: 0}} onClick={muiDocs}>
+        <img src={mui} alt="mui" />
+        </IconButton>
+              <Box>
+        libs
       </Box>
       </Box>
       : 
