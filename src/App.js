@@ -134,7 +134,7 @@ function App() {
       <Box
         sx={{
           background:
-            /* switchTheme === 'light' ? */ "black linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)" /* : "#0d1117" */,
+            /* switchTheme === 'light' ? */ "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)" /* : "#0d1117" */,
         }}
         className="Middle"
       >
@@ -186,8 +186,9 @@ function App() {
             sx={{
               maxHeight: "300px",
               width: "1px",
-              backgroundColor: "#818AA3",
+              backgroundColor: "black",
               margin: "82px 15px",
+              opacity: '30%'
             }}
           ></Box>
           {changeLanguage === "ptbr" ? (
