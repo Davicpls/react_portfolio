@@ -23,7 +23,7 @@ export default function CardAbout() {
 
   return (
     <Card elevation={24} sx={{ width: "28vh", marginRight: "60px" }}>
-      <CardContent>
+      <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={"Montserrat"} variant="h5" component="div">
           Sobre mim
         </Typography>
@@ -74,15 +74,15 @@ export default function CardAbout() {
            - Serviços AWS (S3, CloudFormation, DynamoDB)
         </List>
       </Collapse>
-            <ListItem sx={{ padding: "5px" }}>Experiência em desenvolvimento, implantação e gestão de sistemas complexos e infraestrutura na nuvem.</ListItem>
+            <ListItem sx={{ padding: "5px", pb: '0px' }}>Experiência em desenvolvimento, implantação e gestão de sistemas complexos e infraestrutura na nuvem.</ListItem>
             </Collapse>
-            <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
-          {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
-          {!showMore ? 'mostrar mais' : 'mostrar menos'}
-        </IconButton>
           </List>
         </Typography>
       </CardContent>
+      <IconButton sx={{ fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
+          {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
+          {!showMore ? 'mostrar mais' : 'mostrar menos'}
+        </IconButton>
     </Card>
   );
 }

@@ -24,7 +24,7 @@ export default function CardAbout() {
 
   return (
     <Card elevation={24} sx={{ width: "28vh", marginRight: "60px" }}>
-      <CardContent>
+      <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={"Montserrat"} variant="h5" component="div">
           About me
         </Typography>
@@ -75,15 +75,15 @@ export default function CardAbout() {
            - AWS services (S3, CloudFormation, DynamoDB)
         </List>
       </Collapse>
-            <ListItem sx={{ padding: "5px" }}>Experience in developing, deploying, and managing complex systems and cloud infrastructure.</ListItem>
+            <ListItem sx={{ padding: "5px", pb: '0px' }}>Experience in developing, deploying, and managing complex systems and cloud infrastructure.</ListItem>
             </Collapse>
-            <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
-            {!showMore ? <KeyboardArrowDownIcon color='primary'/>: <KeyboardArrowUpIcon/>}
-            {!showMore ? 'Show more' : 'Show less'}
-            </IconButton>
           </List>
         </Typography>
       </CardContent>
+      <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
+            {!showMore ? <KeyboardArrowDownIcon color='primary'/>: <KeyboardArrowUpIcon color="primary"/>}
+            {!showMore ? 'Show more' : 'Show less'}
+            </IconButton>
     </Card>
   );
 }
