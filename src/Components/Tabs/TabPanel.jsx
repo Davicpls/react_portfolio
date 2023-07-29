@@ -63,7 +63,7 @@ export default function TabsPanel() {
         <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { backgroundColor: "#1A4055" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#912f40" } }}
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"

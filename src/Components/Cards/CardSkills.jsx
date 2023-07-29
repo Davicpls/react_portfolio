@@ -26,7 +26,7 @@ export default function CardSkills() {
 
   return (
     <Card elevation={24} sx={{ width: '28vh' }}>
-        <CardContent>
+        <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">
             Hard Skills
         </Typography>
@@ -182,12 +182,10 @@ export default function CardSkills() {
       </List>
       </Typography>
         </CardContent>
-      <CardActions>
         <IconButton sx={{fontFamily: 'Montserrat', fontSize: '12px'}} onClick={handleShowMore}>
         {!showMore ? <KeyboardArrowDownIcon color='primary'/> : <KeyboardArrowUpIcon color='primary'/>}
           {!showMore ? 'show more' : 'show less'}
         </IconButton>
-      </CardActions>
     </Card>
   );
 }

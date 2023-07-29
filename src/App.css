@@ -1,9 +1,11 @@
 .Middle {
-  height: 809px;
+  height: 864.7px;
   background: #2D4C6D;
   background: white;
   font-size: calc(10px + 2vmin);
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .NavBar {
