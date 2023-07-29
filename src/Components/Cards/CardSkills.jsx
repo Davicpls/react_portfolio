@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Box, CardActions, List, ListItem, Collapse, ListItemIcon, IconButton } from '@mui/material';
+import { Box, List, ListItem, Collapse, ListItemIcon, IconButton } from '@mui/material';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import python_icon from '../Icons/python_icon.png';

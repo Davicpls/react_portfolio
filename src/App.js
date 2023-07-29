@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "./App.css";
 import logo from "./logo.svg";
 import mui from "../src/Components/Icons/mui.png";
+/* import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode"; */
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CircleIcon from "@mui/icons-material/Circle";
 import { Box, List, ListItem, IconButton, Paper } from "@mui/material/";
@@ -57,6 +59,12 @@ function App() {
     setChangeLanguage(newValue);
   };
 
+  /*   const [switchTheme, setSwitchTheme] = useState('light')
+
+  const handleChangeTheme = (newValue) => {
+    setSwitchTheme(newValue)
+  } */
+
   if (isLoading) {
     return <div className="initialLoad">Loading...</div>;
   }
@@ -78,7 +86,7 @@ function App() {
         width: "1920px",
       }}
     >
-      <Paper sx={{ mb: "10px" }} elevation={5}>
+      <Paper sx={{ mb: "auto" }} elevation={5}>
         <Box className="NavBar">
           <Box
             sx={{ width: "39%", marginRight: "30px" }}
@@ -123,7 +131,13 @@ function App() {
           </Box>
         </Box>
       </Paper>
-      <div className="Middle">
+      <Box
+        sx={{
+          background:
+            /* switchTheme === 'light' ? */ "black linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)" /* : "#0d1117" */,
+        }}
+        className="Middle"
+      >
         <Box
           sx={{ width: "100%" }}
           display={"flex"}
@@ -181,6 +195,31 @@ function App() {
           ) : (
             <TabsPanel></TabsPanel>
           )}
+          <Box
+            sx={{
+              mt: "30px",
+              display: "flex",
+              flexDirection: "column",
+              justifyItems: "start",
+              alignItems: "start",
+              width: "10%",
+              gap: "30px",
+            }}
+          >
+            {/*             <IconButton
+              sx={{
+                "&:hover": {
+                  backgroundColor: "#0d1117",
+                },
+                backgroundColor: "#0d1117",
+              }} onClick={() => handleChangeTheme('light')}
+            >
+              <LightModeIcon sx={{ color: "white" }}></LightModeIcon>
+            </IconButton>
+            <IconButton sx={{ backgroundColor: "white" }} onClick={() => handleChangeTheme('dark')}>
+              <DarkModeIcon sx={{ color: "#0d1117" }}></DarkModeIcon>
+            </IconButton> */}
+          </Box>
         </Box>
         <Box
           sx={{
@@ -192,7 +231,7 @@ function App() {
             maxHeight: "6vh",
             minHeight: "6vh",
             background:
-              "#050C1B linear-gradient(270deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%)",
+            'black' /* "#050C1B linear-gradient(270deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%)" */,
             fontSize: "12px",
             fontFamily: "Montserrat",
             color: "white",
@@ -214,7 +253,7 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo" />
               </IconButton>
               <Box>& MUI</Box>
-              <IconButton sx={{ padding: 0 }} onClick={muiDocs}>
+              <IconButton sx={{ pl: "5px", pr: "5px" }} onClick={muiDocs}>
                 <img src={mui} alt="mui" />
               </IconButton>
               <Box>libs</Box>
@@ -232,7 +271,7 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo-react" />
               </IconButton>
               <Box>& MUI</Box>
-              <IconButton sx={{ padding: 0 }} onClick={muiDocs}>
+              <IconButton sx={{ pl: "5px", pr: "5px" }} onClick={muiDocs}>
                 <img src={mui} alt="mui" />
               </IconButton>
               <Box>libs</Box>
@@ -241,7 +280,7 @@ function App() {
             </Box>
           )}
         </Box>
-      </div>
+      </Box>
     </Box>
   );
 }

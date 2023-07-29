@@ -1,7 +1,5 @@
 .Middle {
   height: 864.7px;
-  background: #2D4C6D;
-  background: white;
   font-size: calc(10px + 2vmin);
   display: flex;
   flex-direction: column;
@@ -10,7 +8,7 @@
 
 .NavBar {
   color: white;
-  background: #050C1B linear-gradient(90deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%);
+  background: black /* linear-gradient(90deg, #D9FFF8, #E8E1EF 15%, #D9FFF8 35%, #E8E1EF 50%) */;
   min-height: 6vh;
   max-height: 6vh;
   width: 100%;

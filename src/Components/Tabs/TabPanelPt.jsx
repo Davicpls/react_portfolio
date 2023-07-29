@@ -58,12 +58,12 @@ export default function TabsPanelPt() {
 
   return (
 
-    <Box sx={{width:'70%',  marginRight: '300px'}}>
+    <Box sx={{width:'70%',  marginRight: '150px'}}>
     
         <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { backgroundColor: "#A491D3" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#912f40" } }}
           textColor="inherit"
           variant="fullWidth"
           aria-label="full width tabs example"

@@ -58,7 +58,7 @@ export default function TabsPanel() {
 
   return (
 
-    <Box sx={{width:'70%', marginRight: '300px'}}>
+    <Box sx={{width:'70%', marginRight: '150px'}}>
     
         <Tabs
           value={value}
