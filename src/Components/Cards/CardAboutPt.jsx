@@ -22,7 +22,7 @@ export default function CardAbout() {
   }
 
   return (
-    <Card elevation={24} sx={{ width: "28vh", marginRight: "60px" }}>
+    <Card elevation={24} sx={{minWidth:'23%', maxWidth: '100%', mr: '2%'}}>
       <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={"Montserrat"} variant="h5" component="div">
           Sobre mim

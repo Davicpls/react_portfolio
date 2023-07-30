@@ -88,19 +88,24 @@ function App() {
       <Paper sx={{ mb: "auto" }} elevation={5}>
         <Box className="NavBar">
           <Box
-            sx={{ width: "39%", marginRight: "2%" }}
+            sx={{ ml: "1%" }}
             display={"flex"}
             justifyContent={"end"}
             alignItems={"center"}
           >
+            Davi Coelho
+          </Box>
+          <Box display={"flex"} justifyContent={"end"} alignItems={"center"}>
             Portfolio
           </Box>
 
           <Box
-            sx={{ width: "30%", fontSize: "calc(10px + 1vmin)" }}
-            justifyContent={"end"}
-            display={"flex"}
-            alignItems={"center"}
+            sx={{
+              fontSize: "calc(6px + 1vmin)",
+              display: "flex",
+              alignItems: "center",
+              mr: "1%",
+            }}
           >
             {changeLanguage === "ptbr" ? <>Language:</> : <>Idioma:</>}
             <Box
@@ -108,7 +113,14 @@ function App() {
               display={"flex"}
               alignItems={"center"}
             >
-              <IconButton onClick={() => handleChangeLanguage("ptbr")}>
+              <IconButton
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                  },
+                }}
+                onClick={() => handleChangeLanguage("ptbr")}
+              >
                 <img
                   width={"80%"}
                   height={"25px"}
@@ -117,7 +129,14 @@ function App() {
                   className="flagImgs"
                 ></img>
               </IconButton>
-              <IconButton onClick={() => handleChangeLanguage("en")}>
+              <IconButton
+                sx={{
+                  "&:hover": {
+                    backgroundColor: "transparent",
+                  },
+                }}
+                onClick={() => handleChangeLanguage("en")}
+              >
                 <img
                   width={"80%"}
                   height={"25px"}
@@ -144,7 +163,11 @@ function App() {
           gap={"50px"}
         >
           <Box
-            sx={{ fontSize: "calc(3px + 1vmin)", marginLeft: "50px", marginTop: "50px" }}
+            sx={{
+              fontSize: "calc(3px + 1vmin)",
+              marginLeft: "50px",
+              marginTop: "50px",
+            }}
             display={"flex"}
             alignItems={"start"}
             justifyContent={"start"}
@@ -187,7 +210,7 @@ function App() {
               width: "1px",
               backgroundColor: "black",
               margin: "82px 15px",
-              opacity: '30%'
+              opacity: "30%",
             }}
           ></Box>
           {changeLanguage === "ptbr" ? (
@@ -231,7 +254,7 @@ function App() {
             maxHeight: "6vh",
             minHeight: "6vh",
             background:
-            'black' /* "#050C1B linear-gradient(270deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%)" */,
+              "black" /* "#050C1B linear-gradient(270deg, #050C1B, #1A4055 15%, #1A4055 35%, #050C1B 50%)" */,
             fontSize: "12px",
             fontFamily: "Montserrat",
             color: "white",
