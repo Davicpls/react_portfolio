@@ -55,7 +55,7 @@ export default function CardSocials() {
 
 
   return (
-    <Card elevation={24} sx={{ width: '28vh', marginLeft: '60px' }}>
+    <Card elevation={24} sx={{minWidth:'23%', maxWidth: '100%', ml: '2%'}}>
 
         <CardContent>
           <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">

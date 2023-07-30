@@ -26,7 +26,7 @@ export default function CardSkillsPt() {
   }
 
   return (
-    <Card elevation={24} sx={{ width: '28vh'}}>
+    <Card elevation={24} sx={{minWidth:'23%', maxWidth: '100%'}}>
         <CardContent sx={{paddingBottom: '0px'}}>
         <Typography fontFamily={'Montserrat'} gutterBottom variant="h5" component="div">
             Habilidades
