@@ -83,13 +83,12 @@ function App() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        width: "1920px",
       }}
     >
       <Paper sx={{ mb: "auto" }} elevation={5}>
         <Box className="NavBar">
           <Box
-            sx={{ width: "39%", marginRight: "30px" }}
+            sx={{ width: "39%", marginRight: "2%" }}
             display={"flex"}
             justifyContent={"end"}
             alignItems={"center"}
@@ -98,7 +97,7 @@ function App() {
           </Box>
 
           <Box
-            sx={{ width: "30%", fontSize: "18px" }}
+            sx={{ width: "30%", fontSize: "calc(10px + 1vmin)" }}
             justifyContent={"end"}
             display={"flex"}
             alignItems={"center"}
@@ -145,7 +144,7 @@ function App() {
           gap={"50px"}
         >
           <Box
-            sx={{ fontSize: "12px", marginLeft: "50px", marginTop: "50px" }}
+            sx={{ fontSize: "calc(3px + 1vmin)", marginLeft: "50px", marginTop: "50px" }}
             display={"flex"}
             alignItems={"start"}
             justifyContent={"start"}

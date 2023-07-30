@@ -1,5 +1,5 @@
 .Middle {
-  height: 864.7px;
+  min-height: 864.7px;
   font-size: calc(10px + 2vmin);
   display: flex;
   flex-direction: column;
