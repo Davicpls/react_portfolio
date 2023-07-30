@@ -36,7 +36,7 @@ export default function CardAbout() {
             <ListItem sx={{ padding: "5px" }}>Olá, meu nome é Davi Coelho e tenho 23 anos.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Iniciei a programação com Python em 2022.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Cursando a graduação de Sistemas de Informação na Universidade PUC-MG..</ListItem>
-            <ListItem sx={{ padding: "5px" }}>Conhecimentos sólidos em Javascript, HTML e CSS e C#.</ListItem>
+            <ListItem sx={{ padding: "5px" }}>Conhecimentos sólidos em Javascript, HTML, CSS e C#.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Estagiando no BTG Pactual, trabalhando com tecnologias como</ListItem>
             <Collapse in={showMore}>
             <Collapse in={true} timeout="auto" unmountOnExit>
