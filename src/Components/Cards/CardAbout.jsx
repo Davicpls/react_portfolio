@@ -22,6 +22,19 @@ export default function CardAbout() {
     setShowMore(!showMore)
   }
 
+const birthDate = new Date('1999/08/16');
+
+const today = new Date();
+
+let age = today.getFullYear() - birthDate.getFullYear();
+const month = today.getMonth() - birthDate.getMonth();
+
+if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+  age --;
+}
+
+const myAge = age;
+
   return (
     <Card elevation={24} sx={{minWidth:'23%', maxWidth: '24%', mr: '2%'}}>
       <CardContent sx={{paddingBottom: '0px'}}>
@@ -34,7 +47,7 @@ export default function CardAbout() {
           color="text.secondary"
         >
           <List>
-            <ListItem sx={{ padding: "5px" }}>My name is Davi Coelho and i have 23 years old.</ListItem>
+            <ListItem sx={{ padding: "5px" }}>My name is Davi Coelho and i have {myAge} years old.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Started programming with Python in 2022.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Pursuing Computer Science degree at PUC-MG University.</ListItem>
             <ListItem sx={{ padding: "5px" }}>Knowledgeable in Javascript, HTML, CSS and C#.</ListItem>
