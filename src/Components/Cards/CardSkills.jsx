@@ -14,6 +14,7 @@ import SQL from '../Icons/SQL.png';
 import kubernetes from '../Icons/kubernetes.png';
 import AWS from '../Icons/AWS.png';
 import Azure from '../Icons/Azure.png';
+import gitflow from '../Icons/gitflow.png';
 
 
 export default function CardSkills() {
@@ -32,8 +33,8 @@ export default function CardSkills() {
         </Typography>
         <Typography fontFamily={'Montserrat'} variant="body2" color="text.secondary">
         <List >
-          <ListItem  sx={{padding: '5px'}}>      
-          <Box sx={{marginRight: '5px'}}>  
+        <ListItem  sx={{padding: '3px'}}>      
+          <Box sx={{mr: '3px'}}>
         <img alt='python' src={python_icon} />
         </Box>  Python
           </ListItem>
@@ -51,8 +52,8 @@ export default function CardSkills() {
            - Pandas
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}>      
-      <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='js' src={javaScript} />
         </Box>  JavaScript
       </ListItem>
@@ -77,8 +78,8 @@ export default function CardSkills() {
            - Express.js
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}>      
-      <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='c#' src={CSharp} />
         </Box>  C#
       </ListItem>
@@ -88,10 +89,15 @@ export default function CardSkills() {
             </ListItemIcon>
            - .Net
         </List>
+        <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
+        <img alt='gitflow' src={gitflow} />
+        </Box> Git / GitFlow
+      </ListItem>
       </Collapse>
       <Collapse in={showMore}>
-      <ListItem  sx={{padding: '5px'}}> 
-        <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='sql' src={SQL} />
         </Box> SQL
       </ListItem>
@@ -109,8 +115,8 @@ export default function CardSkills() {
            - SQL Server
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}> 
-        <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='docker' src={docker} />
         </Box> Docker
       </ListItem>
@@ -121,8 +127,8 @@ export default function CardSkills() {
            - WSL
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}> 
-        <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='kubernetes' src={kubernetes} />
         </Box> Kubernetes
       </ListItem>
@@ -133,8 +139,8 @@ export default function CardSkills() {
            - Rancher
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}> 
-        <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='aws' src={AWS} />
         </Box> AWS
       </ListItem>
@@ -166,8 +172,8 @@ export default function CardSkills() {
            - CloudWatch
         </List>
       </Collapse>
-      <ListItem  sx={{padding: '5px'}}> 
-        <Box sx={{marginRight: '5px'}}>  
+      <ListItem  sx={{padding: '3px'}}>      
+      <Box sx={{mr: '3px'}}> 
         <img alt='azure' src={Azure} />
         </Box> Azure
       </ListItem>
